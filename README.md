@@ -12,5 +12,6 @@ cd 10_EJS_Templates
 
 ```bash
 npm install
+nodemon EJS_Templates.js
 ```
 
