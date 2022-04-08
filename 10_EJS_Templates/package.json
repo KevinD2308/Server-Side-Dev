@@ -1,0 +1,17 @@
+{
+  "name": "10_ejs_templates",
+  "version": "1.0.0",
+  "description": "Serving static files in a more dynamic way via EJS template.",
+  "main": "EJS_Templates.js",
+  "scripts": {
+    "start": "nodemon EJS_Templates.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.17.3"
+  }
+}

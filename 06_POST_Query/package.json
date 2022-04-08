@@ -1,0 +1,15 @@
+{
+  "name": "post_query",
+  "version": "1.0.0",
+  "description": "Getting query data from the POST method",
+  "main": "POST_Query.js",
+  "scripts": {
+    "start": "nodemon POST_Query.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

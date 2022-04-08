@@ -1,0 +1,16 @@
+{
+  "name": "09_json_response",
+  "version": "1.0.0",
+  "description": "Working with JSON responses on the server.",
+  "main": "JSON_Response.js",
+  "scripts": {
+    "start": "nodemon JSON_Response.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

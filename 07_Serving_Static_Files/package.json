@@ -1,0 +1,16 @@
+{
+  "name": "07_serving_static_files",
+  "version": "1.0.0",
+  "description": "Serving static files using Express.",
+  "main": "node.js",
+  "scripts": {
+    "start": "nodemon Serving_Static_Files.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "12_cookies",
+  "version": "1.0.0",
+  "description": "Example of how cookies can protect certain sites of the server from unauthorized users",
+  "main": "cookies.js",
+  "scripts": {
+    "start": "nodemon cookies.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

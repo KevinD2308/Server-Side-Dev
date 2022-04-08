@@ -1,0 +1,27 @@
+[
+    { 
+        "Title": "Avatar",
+        "Year": "2009",
+        "Rated": "PG-13",
+        "Released": "18 Dec 2009",
+        "Runtime": "162 min",
+        "Genre": "Action, Adventure, Fantasy"
+    },
+    {
+        "Title": "300",
+        "Year": "2006",
+        "Rated": "R",
+        "Released": "09 Mar 2007",
+        "Runtime": "117 min",
+        "Genre": "Action, Drama, Fantasy"
+    },
+    {
+        "Title": "The Wolf of Wall Street",
+        "Year": "2013",
+        "Rated": "R",
+        "Released": "25 Dec 2013",
+        "Runtime": "180 min",
+        "Genre": "Biography, Comedy, Crime"
+    }    
+]
+  

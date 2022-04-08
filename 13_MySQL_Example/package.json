@@ -1,0 +1,16 @@
+{
+  "name": "13_mysql_example",
+  "version": "1.0.0",
+  "description": "A simple example of working with MySQL databases.",
+  "main": "MySQL_Example.js",
+  "scripts": {
+    "start": "nodemon MySQL_Example.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

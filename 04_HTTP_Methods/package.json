@@ -1,0 +1,15 @@
+{
+  "name": "http_methods",
+  "version": "1.0.0",
+  "description": "\"Illustrating different HTTP methods such as: GET, POST and DELETE.",
+  "main": "HTTP_Methods.js",
+  "scripts": {
+    "start": "nodemon HTTP_Methods.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

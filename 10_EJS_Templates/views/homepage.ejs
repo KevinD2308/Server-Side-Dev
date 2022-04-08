@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+     <!--  Outputing the data on the html file.  -->
+
+    <h1>You Searched For : <%= data.userQuery %></h1>     
+        <% if(data.loggedIn){ %>
+    <h2> You are logged in as : <%= data.username %> </h2>      <!-- If statement to show if the user is logged in or not. -->
+        <% } %>
+          <ul>
+            <% data.searchResults.forEach(result=>{ %>          <!-- Outputing the results to the user. -->
+                <li> <%= result %> </li> 
+            <% }); %>
+          </ul>
+   </body>
+</html>

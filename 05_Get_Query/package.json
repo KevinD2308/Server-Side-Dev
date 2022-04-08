@@ -1,0 +1,15 @@
+{
+  "name": "get_query",
+  "version": "1.0.0",
+  "description": "Illustrating how to get query strings.",
+  "main": "GET_Query.js",
+  "scripts": {
+    "start": "nodemon GET_Query.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

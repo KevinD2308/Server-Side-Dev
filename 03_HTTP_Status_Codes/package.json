@@ -1,0 +1,16 @@
+{
+  "name": "http_status_codes",
+  "version": "1.0.0",
+  "description": "Illustrating different HTTP status codes.",
+  "main": "HTTP_Status_Codes.js",
+  "scripts": {
+    "start": "nodemon HTTP_Status_Codes.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Dhembi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
