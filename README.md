@@ -8,9 +8,6 @@ After cloning the repository, try accessing whatever folder and install the depe
 ```bash
 git clone https://github.com/KevinD2308/test_nodejs.git
 cd 10_EJS_Templates
-```
-
-```bash
 npm install
 nodemon EJS_Templates.js
 ```
