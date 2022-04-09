@@ -63,7 +63,7 @@ app.get('', (req,res) => {
 
     pool.getConnection((err, connection) =>{
         if(err) throw err;
-
+        connection.changeUser({database : "Students"});
         connection.query('SELECT * from students_table', (err, rows) => {
             connection.release()
 
@@ -82,7 +82,7 @@ app.get('/:id', (req,res) => {
 
     pool.getConnection((err, connection) =>{
         if(err) throw err;
-
+        connection.changeUser({database : "Students"});
         connection.query('SELECT * from students_table WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release()
 
@@ -101,7 +101,7 @@ app.delete('/:id', (req,res) => {
 
     pool.getConnection((err, connection) =>{
         if(err) throw err;
-
+        connection.changeUser({database : "Students"});
         connection.query('DELETE from students_table WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release()
 
@@ -119,8 +119,8 @@ app.delete('/:id', (req,res) => {
 app.post('/', (req,res) => {
 
     pool.getConnection((err, connection) => {
-        if(err) throw err
-        
+        if(err) throw err;
+        connection.changeUser({database : "Students"});
         const params = req.body
         connection.query('INSERT INTO students_table SET ?', params, (err, rows) => {
         connection.release()                            // Return the connection to pool.
@@ -138,7 +138,7 @@ app.patch('/', (req,res) => {
 
     pool.getConnection((err, connection) =>{
         if(err) throw err;
-
+        connection.changeUser({database : "Students"});
         const {ID, Name, Grade} = req.body
         connection.query('UPDATE students_table SET Grade = ? WHERE ID = ?', [Grade,ID], (err, rows) => {
             connection.release()
