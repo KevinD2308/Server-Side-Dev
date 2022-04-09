@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require('express');         // Importing Express.
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.json());                    // This allows the client to insert data into the server in JSON format.
+app.use(express.urlencoded({extended: false}))          
 
 // An array of users is created. 
 
@@ -38,5 +38,5 @@ app.delete('/', (req, res) => {
 // Starting the server on port 3000.
 
 app.listen(3000, () => {
-    console.log('Server running');
+    console.log('Server running on port 3000.');
   });

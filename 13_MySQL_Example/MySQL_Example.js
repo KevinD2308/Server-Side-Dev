@@ -1,31 +1,42 @@
-const express = require ('express');        // Initializing Express.
-const bodyParser = require('body-parser')   // Initializing Body-Parser.
-const mysql = require('mysql');             // Initializing MySQL.
+const express = require ('express');                    // Importing Express.
+const bodyParser = require('body-parser')               // Importing Body-Parser.
+const mysql = require('mysql');                         // Importing MySQL.
 
 const app = express();
-const port = process.env.PORT || 5000       // Opening port 5000.
+const port = process.env.PORT || 5000                   // Opening port 5000.
 
-app.use(bodyParser.urlencoded({extended: false}))   // Returns middleware that only parses urlencoded bodies.
-app.use(bodyParser.json())                          // Returns middleware that only parses json.
+app.use(bodyParser.urlencoded({extended: false}))       // Returns middleware that only parses urlencoded bodies.
+app.use(bodyParser.json())                              // Returns middleware that only parses json.
 
-// Connect to MYSQL
+// Connecting to MYSQL
 
 const pool = mysql.createPool({
     connectionLimit: 10,
     host            : 'localhost',
     user            : 'root',
     password        : '',
-    database        : 'students'
 })
 
-// Creating a new table: "students_table" if it does not exist.
+// Creating a new database
+
+pool.getConnection(function(err,connection) {
+    if (err) throw err;
+    console.log("Connected!");
+    connection.query("CREATE DATABASE IF NOT EXISTS Students ", function (err, result) {
+      if (err) throw err;
+      console.log("Database created");
+    });
+});
+
+
+// Connecting to the created database and creating a new table: "students_table" if it does not exist.
 
 pool.getConnection(function(err,connection) {
     if (err) {
       return console.error('error: ' + err.message);
     }
-  
-    let createstudents = `create table if not exists students_table(
+    connection.changeUser({database : "Students"});
+    let createstudents = `create table IF NOT EXISTS students_table(
                             ID int primary key auto_increment,
                             Name varchar(255)not null,
                             Grade int not null 
@@ -34,6 +45,8 @@ pool.getConnection(function(err,connection) {
     connection.query(createstudents, function(err, results, fields) {
       if (err) {
         console.log(err.message);
+      } else {
+          console.log("Table created.")
       }
     });
   
@@ -44,7 +57,7 @@ pool.getConnection(function(err,connection) {
     })
 })
   
-// Select all students
+// Selecting all students
 
 app.get('', (req,res) => {
 
@@ -63,7 +76,7 @@ app.get('', (req,res) => {
     })
 })
 
-// Select specific students by ID
+// Selecting specific students by ID
 
 app.get('/:id', (req,res) => {
 
@@ -82,7 +95,7 @@ app.get('/:id', (req,res) => {
     })
 })
 
-// Delete students by ID
+// Deleting students by ID
 
 app.delete('/:id', (req,res) => {
 
@@ -101,7 +114,7 @@ app.delete('/:id', (req,res) => {
     })
 })
 
-// Insert student
+// Inserting a student
 
 app.post('/', (req,res) => {
 
@@ -110,7 +123,7 @@ app.post('/', (req,res) => {
         
         const params = req.body
         connection.query('INSERT INTO students_table SET ?', params, (err, rows) => {
-        connection.release() // return the connection to pool
+        connection.release()                            // Return the connection to pool.
         if (!err) {
             res.send(`Student has been added.`)
         } else {
@@ -119,7 +132,7 @@ app.post('/', (req,res) => {
     })
 })
 
-// Update the student
+// Updating a student
 
 app.patch('/', (req,res) => {
 

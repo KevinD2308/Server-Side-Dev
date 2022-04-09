@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express')      // Importing Express.
 const app = express();
 
 // Status code 200 is sent when the request has succeeded. 

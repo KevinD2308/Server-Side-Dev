@@ -1,11 +1,11 @@
-const express = require ('express'); //Initializing express.
+const express = require ('express');                    // Importing Express.
 const app = express();
 
 app.get("/", (req,res) => {
     
     const responseData = {
     username:"Kevin",
-    age: 23,                        // The response data.
+    age: 23,                                            // The response data.
     password: "secret",
     gender: "male"
 }

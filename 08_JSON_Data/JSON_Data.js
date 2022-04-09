@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require('express');             // Importing Express.
 const app = express();
 
-const movies = require("./movies"); // Requiring the movies file.
-console.log(movies); // Displaying data on the terminal.
+const movies = require("./movies");             // Requiring the movies file.
+console.log(movies);                            // Displaying data on the terminal.
 
 
 // Displaying data to the client.

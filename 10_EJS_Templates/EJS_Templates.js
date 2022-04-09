@@ -1,7 +1,7 @@
-const express = require('express')  // Initializing Express
+const express = require('express')                                              // Importing Express.
 const app = express()
 
-app.set('view engine', 'ejs');      // Specifying the view engine.
+app.set('view engine', 'ejs');                                                  // Specifying the view engine.
 
 app.get('/:userQuery',(req,res)=>{
     res.render('homepage',{data : {userQuery: req.params.userQuery,             // Rendering the .ejs file. 
